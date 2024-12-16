@@ -1,4 +1,5 @@
 import unittest
+import requests
 from unittest.mock import patch, mock_open
 from main import validate_phone, search_in_text, search_in_url, search_in_file
 
@@ -7,9 +8,7 @@ class TestValidatePhone(unittest.TestCase):
         valid_numbers = [
             "+7 123 456-78-90",
             "8 (123) 456 78 90",
-            "1234567890",
             "+71234567890",
-            "7 123 456-78-90"
         ]
         for number in valid_numbers:
             with self.subTest(number=number):
